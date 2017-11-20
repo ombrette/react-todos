@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import Todo from "./containers/TodosComponent";
+import { Provider } from 'react-redux';
+import Todo from "./features/todos/containers";
 import "./App.css";
 
+import store from './redux/store';
 
-class App extends Component {
-  render() {
-    return (
-      <Todo />
-    );
-  }
-}
+const App = () => 
+<Provider store={store}>
+    <Todo />
+</Provider>;
 
 export default App;
